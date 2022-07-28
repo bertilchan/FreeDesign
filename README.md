@@ -1,11 +1,36 @@
-# Vue 3 + Vite
+# FreeDesign-Server
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### 项目运行
 
-## Recommended IDE Setup
+* 安装依赖：`npm install`
+* 运行项目：`npm start`
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+### 分支命名规范
 
-## Design
-- [lanhu design](https://lanhuapp.com/url/MrE2X-AMdbxt)
+统一为`feat/xxx`
 
+### 代码提交规范
+
+push 代码的commit 版本描述统一为：
+
+```
+feat: 新特性
+fix: 修改问题
+refactor: 代码重构
+docs: 文档修改
+style: 代码格式修改, 注意不是 css 修改
+test: 测试用例修改
+chore: 其他修改, 比如构建流程, 依赖管理.
+pref: 性能提升的修改
+build: 对项目构建或者依赖的改动
+ci: CI 的修改
+revert: revert 前一个 commit
+```
+
+### Link
+
+[线上地址](http://47.107.78.74:99/)
+
+[API文档]()
+
+[后端代码仓库](https://github.com/bertilchan/FreeDesign-Server)
