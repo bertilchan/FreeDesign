@@ -18,7 +18,7 @@
         <div class="edit-operation">
           <button id="undo" @click="undo" :disabled="!canUndo" />
           <button id="redo" @click="redo" :disabled="!canRedo" />
-          <button id="edit-save" @click="saveProject" />
+          <button id="edit-save" @click="saveProject(true)" />
           <p v-if="!isSaveProject" id="edit-save-time">保存于 {{ saveTime }}</p>
         </div>
       </div>
@@ -67,13 +67,16 @@ export default {
     // 保存
     let isSaveProject = ref(true);
     let saveTime = ref(''); // 此次保存时间
-    const saveProject = () => {
+    const saveProject = (displayTips) => {
       store.commit('editPage/slimComponents');
       const canvasPageContent = store.state.editPage.fileContent;
       return api
         .modifyContent({id: route.params.id, content: JSON.stringify(canvasPageContent)})
         .then((res) => {
           if (res.code === 2000) {
+            if(displayTips) {
+              Message.success('保存成功')
+            }
             router.replace({
               // 修改路由参数，主修改时间
               query: {
@@ -126,7 +129,8 @@ export default {
     const displaylDialog = (isPublish) => {
       // 发布
       if (isPublish) {
-        if (confirm('是否确定将本项目发布？')) {
+        // 有无更好的方案
+        // if (confirm('是否确定将本项目发布？')) {
           isPublishBtn.value = isPublish;
           // 先保存后发布
           saveProject().then(() => {
@@ -135,7 +139,7 @@ export default {
             });
             dialogVisible.value = !dialogVisible.value;
           });
-        }
+        // }
       } else {
         // 预览
         isPublishBtn.value = isPublish;

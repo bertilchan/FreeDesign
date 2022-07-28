@@ -26,6 +26,8 @@
 
 <script>
 import {ref, watch, inject} from 'vue';
+import Message from '@/components/ShowMessage';
+
 export default {
   name: 'DialogBox',
   props: {
@@ -55,6 +57,7 @@ export default {
     // 点击复制，复制链接
     let linkValue = inject('onlineUrl'); // 返回的访问地址
     const copyPublishLink = () => {
+      Message.success('复制成功')
       let onlineLink = document.getElementById('online-link');
       onlineLink.select();
       document.execCommand('copy');

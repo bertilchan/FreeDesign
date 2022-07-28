@@ -376,11 +376,11 @@ import { tagToOptions } from "@/utils/tagToOptions/index.js";
 import api from "@/api/index.js";
 import style from "@/utils/style.json";
 import {throttle} from 'lodash-es'
+import Message from '../ShowMessage';
 
 export default {
 	name: "AttrStyle",
 	setup() {
-		// #region 超旭start
 		const store = useStore();
 
 		let initStatus = false;
@@ -513,16 +513,12 @@ export default {
 			});
 		}
 
-		// #endregion 超旭end
 
-		// #region 超旭start
 		let fontFamilys = reactive({
 			options: [{ value: "微软雅黑" }, { value: "宋体" }, { value: "黑体" }],
 			value: "微软雅黑",
 		});
-		// #endregion 超旭end
 
-		// #region 超旭start
 		// 监听字体变化
 		watch(
 			() => fontFamilys.value,
@@ -532,9 +528,7 @@ export default {
 				});
 			}
 		);
-		// #endregion 超旭end
 
-		// #region 超旭start
 		let fontColor = ref(null);
 		fontColor.value = "#ffe793";
 		watch(
@@ -545,7 +539,6 @@ export default {
 				});
 			}
 		);
-		// #endregion 超旭end
 
 		let fontSizes = reactive({
 			options: [
@@ -563,7 +556,6 @@ export default {
 			value: "16",
 		});
 
-		// #region 超旭start
 		// 监听文字大小变化
 		watch(
 			() => fontSizes.value,
@@ -649,11 +641,9 @@ export default {
 				}
 			}
 		}
-		// #endregion 超旭end
 
 		let text = reactive({});
 
-		// #region 超旭start
 
 		// 背景色
 		let BgColor = ref(null);
@@ -679,9 +669,7 @@ export default {
 			}
 		);
 
-		// #endregion 超旭end
-
-		//#region 边框
+		// 边框
 		const componentBorder = computed(() =>
       compData.value?.style['border']
     );
@@ -742,9 +730,8 @@ export default {
 				setStyle({ 'border': s });
 			}
     };
-    //#endregion 边框
 	
-    //#region 阴影
+    // 阴影
     /** @type {import('vue').ComputedRef<string | undefined>} */
     const componentShadow = computed(() =>
       compData.value?.style['box-shadow']
@@ -813,10 +800,8 @@ export default {
         setStyle({ 'box-shadow': s });
       }
     };
-    //#endregion 阴影
 
 
-    // #region 远安 start
 
     // 监听组件的高度和宽度的变化
     let width = ref(0);
@@ -859,11 +844,9 @@ export default {
 
     
 
-    // #endregion 
 
 
 
-		// #region 超旭start
 		let urlContent = ref(null);
 		function modifyUrl() {
 			store.commit("editPage/setActiveComponentValues", {
@@ -879,18 +862,17 @@ export default {
 						url: data.data.url,
 					});
 				} else {
-					alert("上传失败");
+					Message.error("上传失败");
 				}
 			});
 		}
 
 		// 未开发事件
 		function uncultivated() {
-			alert("敬请期待");
+			Message.warning("敬请期待");
 		}
-		// #endregion 超旭end
 
-		//runnging-snails  begin
+		//runnging-snails 
 		const changeVertical = (type) => {
 			setStyle({ 'align-items': type });
 		};
@@ -898,10 +880,9 @@ export default {
 		const changeAlign = (type) => {
 			setStyle({ 'justify-content': type });
 		};
-		//runnging-snails  end
 
 		return {
-			// #region 超旭start
+			//  start
 			tagOptions,
 			compData,
 			getBIUSAClass,
@@ -914,7 +895,7 @@ export default {
 			textContent,
 			urlContent,
 
-			// #endregion 超旭end
+			// #endregion   end
 
 			fontFamilys,
 			fontColor,
@@ -944,10 +925,10 @@ export default {
 
 			borderTypes,
 
-			// #region 超旭start
+			//  start
 			changeImageFile,
 			uncultivated,
-			// #endregion 超旭end
+			// #endregion   end
 
 			changeVertical,
 			changeAlign,

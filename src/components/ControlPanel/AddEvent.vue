@@ -32,6 +32,7 @@
 
 <script>
 import { defineComponent, ref, reactive, inject } from "vue";
+import Message from '../ShowMessage';
 
 export default defineComponent({
 	name: "AddEvent",
@@ -148,7 +149,7 @@ export default defineComponent({
 				emit("addEvent", event);
 				this.triggleIsAdd("cur");
 			} else {
-				alert("目标页面不能为空");
+				Message.error("目标页面不能为空");
 			}
 		}
 		function cancel() {

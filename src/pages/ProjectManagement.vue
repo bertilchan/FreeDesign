@@ -152,6 +152,8 @@ const prompt = async () => {
     const {value} = await ElMessageBox.prompt('请输入项目名称', '导入项目', {
       inputPattern: /^.+$/,
       inputErrorMessage: '项目名称不能为空',
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
     });
     return value;
   } catch {

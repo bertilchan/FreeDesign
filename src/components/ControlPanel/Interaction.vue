@@ -66,6 +66,7 @@
 import { ref, reactive, defineComponent, handleError, watch } from "vue";
 import { useStore } from "vuex";
 import { tagToOptions } from "@/utils/tagToOptions/index.js";
+import Message from '../ShowMessage';
 
 export default defineComponent({
 	name: "Interaction",
@@ -354,7 +355,7 @@ export default defineComponent({
 				}
 				this.triggleIsAdd("cur");
 			} else {
-				alert("目标页面不能为空");
+				Message.error("目标页面不能为空");
 			}
 			// originAddEvent(oriEvent);
 			changeEvent();
