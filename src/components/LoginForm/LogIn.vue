@@ -25,7 +25,7 @@
       class="login_form_button" 
       @click="login"
     >
-      登录
+      登 录
     </div>
   </div>
 </template>
@@ -105,9 +105,13 @@ const login = async () => {
     font-size: 18px;
     line-height: 40px;
     text-align: center;
-    color: #fff;
-    background-color: rgb(0, 73, 184);
+    // background-color: rgb(0, 73, 184);
     cursor: pointer;
+    border-radius: 4px;
+    color: #fff;
+    border: none;
+    background: linear-gradient(133deg, #a4c4f3 0%, #31a4f1 100%);
+    box-shadow: 0px 15px 15px -10px rgba(71, 177, 248, 0.5), 0px -10px 30px -10px rgba(71, 177, 248, 0.5);
   }
 }
 </style>

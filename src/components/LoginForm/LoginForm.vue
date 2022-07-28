@@ -72,10 +72,11 @@ const toggleLoginForm = () => store.commit('handleLoginFormClose');
     margin-bottom: 10px;
     font-size: 18px;
     .tab_button {
+      cursor: pointer;
       &.active {
-        color: rgb(0, 73, 184);
+        color: #47b1f8;
         padding-bottom: 5px;
-        border-bottom: 3px solid rgb(0, 73, 184);
+        border-bottom: 3px solid #47b1f8;
       }
     }
   }
