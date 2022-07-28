@@ -1,9 +1,10 @@
-# FreeDesign-Server
+# FreeDesign
 
 ### 项目运行
 
 * 安装依赖：`npm install`
-* 运行项目：`npm start`
+* 运行项目：`npm run serve`
+* 打包：`npm run build`
 
 ### 分支命名规范
 
