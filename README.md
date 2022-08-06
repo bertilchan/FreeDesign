@@ -27,10 +27,13 @@ build: 对项目构建或者依赖的改动
 ci: CI 的修改
 revert: revert 前一个 commit
 ```
+### notice
+* 执行build时先删除原有的dist
+* 不需手动copy dist文件到server中的webapp更新，已在jenkins中实现
 
 ### Link
 
-[线上地址](http://47.107.78.74:99/)
+[线上地址](http://47.107.78.74:3333/)
 
 [API文档]()
 

@@ -10,7 +10,7 @@
           <input
             id="online-link"
             type="text"
-            :value="'http://47.107.78.74:99' + linkValue"
+            :value="'http://47.107.78.74:3333' + linkValue"
           />
         </div>
         <button :class="btn ? 'publishCopyBtn' : 'copyBtn'" @click="copyPublishLink">

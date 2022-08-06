@@ -33,17 +33,13 @@
         </div>
       </div>
     </div>
-    <!-- <div class="video">
+    <div class="video">
       <iframe 
-        src="//player.bilibili.com/player.html?aid=681404924&bvid=BV1HS4y1G7P3&cid=505273556&page=1" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true"
+        src="https://chenzibo.xyz/images/freedesign/tutorial.mp4" 
+        allowfullscreen
         class="v"
       />
-    </div> -->
+    </div>
     <div class="go">
       <div class="text">
         快来创建<br>
@@ -58,8 +54,8 @@
         </div>
       </div>
     </div>
-    <div class="foot">
-      ©2022-FreeDesign
+    <div class="copyright">
+      Copyright&copy; 2022-2029 FreeDesign团队开发
     </div>
   </div>
 </template>
@@ -78,7 +74,7 @@ const go = () => router.push('/project');
   & > div {
     display: flex;
     justify-content: center;
-    padding: 82px 0 72px;
+    padding: 30px 0;
   }
   .title {
     div {
@@ -107,6 +103,8 @@ const go = () => router.push('/project');
   }
   .info {
     background-color: #666;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#666),to(rgb(156, 156, 156)));
+
     .info_left {
       img {
         width: 370px;
@@ -178,15 +176,15 @@ const go = () => router.push('/project');
       }
     }
   }
-  .foot {
-    line-height: 12px;
-    color: #fff;
-    background: #666666;
+  .copyright {
+    font-size: 14px;
+    color: #99a9bf;
+    background: rgb(31, 45, 61);
   }
 }
 iframe {
-  padding-bottom: 10px;
+  border: 3px solid #eeeeee;
   border-radius: 20px;
-  border: 1px solid #666666;
+  box-shadow: 0px 3px 24px 1px rgb(0 0 0 / 16%); 
 }
 </style>

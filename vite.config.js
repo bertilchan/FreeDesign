@@ -25,14 +25,14 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://47.107.78.74:99',
-        // target: 'http://localhost:99',
+        target: 'http://47.107.78.74:3333',
+        // target: 'http://localhost:3333',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },
       '/other': {
-        target: 'http://47.107.78.74:99',
-        // target: 'http://localhost:99',
+        target: 'http://47.107.78.74:3333',
+        // target: 'http://localhost:3333',
         changeOrigin: true,
       }
     }
