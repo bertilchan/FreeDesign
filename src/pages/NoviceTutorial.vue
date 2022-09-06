@@ -35,7 +35,7 @@
     </div>
     <div class="video">
       <iframe 
-        src="https://chenzibo.xyz/images/freedesign/tutorial.mp4" 
+        src="http://chenzibo.xyz/images/freedesign/tutorial.mp4" 
         allowfullscreen
         class="v"
       />
